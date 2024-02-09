@@ -4,9 +4,9 @@ local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.
 local Window = Fluent:CreateWindow({
     Title = "Gamer144 Hub v1 pro",
     SubTitle = "By Huy",
-    TabWidth = 160,
+    TabWidth = 130,
     Size = UDim2.fromOffset(530, 350),
-    Acrylic = true,
+    Acrylic = false,
     Theme = "Aqua",
     MinimizeKey = Enum.KeyCode.End
 })
@@ -2471,7 +2471,7 @@ local listfastattack = {'Normal Attack','Fast Attack','Super Fast Attack'}
 
     local DropdownDelayAttack = Tabs.Main:AddDropdown("DropdownDelayAttack", {
         Title = "Chọn Tốc Độ Đánh",
-        Description = "",
+        Description = "nên chọn normal attack hoặc nhanh hơn thì super fast attack",
         Values = listfastattack,
         Multi = false,
         Default = 1,
@@ -2480,11 +2480,11 @@ local listfastattack = {'Normal Attack','Fast Attack','Super Fast Attack'}
     DropdownDelayAttack:OnChanged(function(Value)
     _G.FastAttackGamer144_Mode = Value
 	if _G.FastAttackGamer144_Mode == "Fast Attack" then
-		_G.Fast_Delay = 0.12
+		_G.Fast_Delay = 0.0.9
 	elseif _G.FastAttackGamer144_Mode == "Normal Attack" then
-		_G.Fast_Delay = 0.1
-	elseif _G.FastAttackZueszYTB_Mode == "Super Fast Attack" then
-		_G.Fast_Delay = 0.05
+		_G.Fast_Delay = 0.08
+	elseif _G.FastAttackGamer144_Mode == "Super Fast Attack" then
+		_G.Fast_Delay = 0.04
 	end
 end)
 
@@ -2601,54 +2601,6 @@ end)
         end)
 
 
-
-
-        local ToggleCandy = Tabs.Main:AddToggle("ToggleCandy", {Title = "Auto Farm Candy ( Only Max Level )",Description = "Cày Kẹo ( Chỉ Cấp Độ Tối Đa )", Default = false })
-        ToggleCandy:OnChanged(function(Value)
-           _G.AutoCandy = Value
-           if Value == false then
-            wait()
-            Tween(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame)
-            wait()
-        end
-        end)
-        Options.ToggleCandy:SetValue(false)
-
-		local CandyPos = CFrame.new(-16603.197265625, 130.3873748779297, 1087.16455078125)
-		spawn(function()
-				  while wait() do 
-					  if _G.AutoCandy then
-						  pcall(function()
-							toTarget(CandyPos)
-							  if game:GetService("Workspace").Enemies:FindFirstChild("Isle Outlaw") or game:GetService("Workspace").Enemies:FindFirstChild("Island Boy") or game:GetService("Workspace").Enemies:FindFirstChild("Sun-kissed Warrior") or game:GetService("Workspace").Enemies:FindFirstChild("Isle Champion") then
-								  for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
-									  if v.Name == "Isle Outlaw" or v.Name == "Island Boy" or v.Name == "Sun-kissed Warrior" or v.Name == "Isle Champion" then
-										 if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
-											 repeat wait(_G.Fast_Delay)
-												 AttackNoCoolDown()
-                                                 bringmob = true
-												 AutoHaki()
-												 EquipTool(SelectWeapon)
-												 toTarget(v.HumanoidRootPart.CFrame * CFrame.new(posX,posY,posZ))
-												 v.HumanoidRootPart.Size = Vector3.new(1, 1, 1)
-												 v.HumanoidRootPart.Transparency = 1
-												 v.Humanoid.JumpPower = 0
-												 v.Humanoid.WalkSpeed = 0
-												 v.HumanoidRootPart.CanCollide = false
-												 FarmPos = v.HumanoidRootPart.CFrame
-												 MonFarm = v.Name
-											  until not _G.AutoCandy or not v.Parent or v.Humanoid.Health <= 0
-                                              bringmob = false
-                                            end
-									  end
-								  end
-                                  toTarget(CFrame.new(-16599.1484375, 154.2681121826172, -166.32186889648438))
-							end
-						end)
-					  end
-				  end
-			  end)
-
     local ToggleMobAura = Tabs.Main:AddToggle("ToggleMobAura", {
         Title = "Đánh Quái Ở Gần",
         Description = "",
@@ -2698,7 +2650,7 @@ end)
 
     local ToggleCastleRaid = Tabs.Main:AddToggle("ToggleCastleRaid", {
         Title = "Đánh Hải Tặc ở Pháo Đài",
-        Description = "", 
+        Description = "Lưu ý trên sea 3", 
         Default = false })
     ToggleCastleRaid:OnChanged(function(Value)
         _G.CastleRaid = Value
@@ -2802,7 +2754,7 @@ end
 function TPchest(P1)          
             local Distance = (P1.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
               if Distance >= 0 then
-                Speed = 1200000
+                Speed = 1100000
                 end
                 local tween =  game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(Distance/Speed), {CFrame = P1  }) tween:Play()                                    
              end
@@ -2953,9 +2905,9 @@ local Mastery = Tabs.Main:AddSection("Mastery Farm")
     local SliderHealt = Tabs.Main:AddSlider("SliderHealt", {
         Title = "Phần Trăm Máu Quái",
         Description = "",
-        Default = 25,
+        Default = 15,
         Min = 0,
-        Max = 100,
+        Max = 110,
         Rounding = 1,
         Callback = function(Value)
             KillPercent = Value
@@ -4800,7 +4752,7 @@ Options.ToggleQuanSat:SetValue(false)
 local ToggleFastAttack = Tabs.Player:AddToggle("ToggleFastAttack", {Title = "Đánh Người Chơi",Description = "", Default = false })
 
 ToggleFastAttack:OnChanged(function(Value)
- _G.FastAttackZueszYTB = Value
+ _G.FastAttackGamer144 = Value
 end)
 Options.ToggleFastAttack:SetValue(false)
 
@@ -4827,10 +4779,10 @@ SliderDelayAttackPlayer:SetValue(0.1)
 spawn(function()
 while wait() do
     pcall(function()
-        if _G.FastAttackZueszYTB then
+        if _G.FastAttackGamer144 then
             repeat wait(_G.DelayAttackPlayer)
                AttackNoCoolDown()
-            until not _G.FastAttackZueszYTB
+            until not _G.FastAttackGamer144
         end
     end)
 end
@@ -5097,7 +5049,7 @@ Tabs.Teleport:AddButton({
 
 
 Tabs.Teleport:AddButton({
-    Title = "Sea 3a",
+    Title = "Sea 3",
     Description = "",
     Callback = function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("TravelZou")
@@ -6144,7 +6096,7 @@ spawn(function()
                                     AutoHaki()
                                     EquipTool(SelectWeapon)
                                     v.HumanoidRootPart.CanCollide = false
-                                    v.Humanoid.WalkSpeed = 0
+                                    v.Humanoid.WalkSpeed = 1
                                     v.Head.CanCollide = false 
                                     FarmPos = v.HumanoidRootPart.CFrame
                                     MonFarm = v.Name
@@ -6184,7 +6136,7 @@ while wait() do
 end
 end)
 
-local ToggleRandomBone = Tabs.Shop:AddToggle("ToggleRandomBone", {Title = "Đổi xương",Description = "", Default = false })
+local ToggleRandomBone = Tabs.Shop:AddToggle("ToggleRandomBone", {Title = "random xương",Description = "", Default = false })
 ToggleRandomBone:OnChanged(function(Value)  
 		_G.AutoRandomBone = Value
 end)
@@ -6785,7 +6737,7 @@ spawn(function()
         elseif game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=16223659141" then
             Hop()
             Fluent:Notify({
-                Title = "YTB: Zuesz Hub",
+                Title = "Gamer144 Hub",
                 Content = "Turn Off Find Full Moon...",
                 SubContent = "", -- Optional
                 Duration = 5 -- Set to nil to make the notification not disappear
@@ -6793,7 +6745,7 @@ spawn(function()
         elseif game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=16223659141" then
             Hop()
             Fluent:Notify({
-                Title = "YTB: Zuesz Hub",
+                Title = "Gamer144 Hub",
                 Content = "Hop...",
                 SubContent = "", -- Optional
                 Duration = 5 -- Set to nil to make the notification not disappear
@@ -6801,7 +6753,7 @@ spawn(function()
         elseif game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=16223659141" then
             Hop()
             Fluent:Notify({
-                Title = "YTB: Zuesz Hub",
+                Title = "Gamer144",
                 Content = "Hop...",
                 SubContent = "", -- Optional
                 Duration = 5 -- Set to nil to make the notification not disappear
