@@ -1,22 +1,22 @@
-local Fluent = loadstring(game:HttpGet(https://raw.githubusercontent.com/Gamer144roblox/Test-hack/main/ProHub.txt"))()
+local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
 local Window = Fluent:CreateWindow({
     Title = "Gamer144 Hub v1 pro",
     SubTitle = "By Huy",
-    TabWidth = 130,
+    TabWidth = 160,
     Size = UDim2.fromOffset(530, 350),
     Acrylic = true,
     Theme = "Aqua",
     MinimizeKey = Enum.KeyCode.End
 })
 local Tabs = {
-    Main = Window:AddTab({ Title = "Main", Icon = "home" }),
-    Stats = Window:AddTab({ Title = "Stats", Icon = "plus-circle" }),
-    Player = Window:AddTab({ Title = "Player", Icon = "baby" }),
-    Teleport = Window:AddTab({ Title = "Island", Icon = "island" }),
-    Fruit = Window:AddTab({ Title = "Fruit", Icon = "cherry" }),
-    Raid = Window:AddTab({ Title = "Raid", Icon = "swords" }),
+    Main = Window:AddTab({ Title = "Main", Icon = "" }),
+    Stats = Window:AddTab({ Title = "Stats", Icon = "" }),
+    Player = Window:AddTab({ Title = "Player", Icon = "" }),
+    Teleport = Window:AddTab({ Title = "Island", Icon = "" }),
+    Fruit = Window:AddTab({ Title = "Fruit", Icon = "" }),
+    Raid = Window:AddTab({ Title = "Raid", Icon = "" }),
     Race = Window:AddTab({ Title = "Race V4", Icon = "" }),
     Shop = Window:AddTab({ Title = "Shop", Icon = "" }),
 	Misc = Window:AddTab({ Title = "Misc", Icon = "" }),
@@ -2478,13 +2478,13 @@ local listfastattack = {'Normal Attack','Fast Attack','Super Fast Attack'}
     })
     DropdownDelayAttack:SetValue("Fast Attack")
     DropdownDelayAttack:OnChanged(function(Value)
-    _G.FastAttackGamer144YTB_Mode = Value
-	if _G.FastAttackGamer144YTB_Mode == "Fast Attack" then
+    _G.FastAttackGamer144_Mode = Value
+	if _G.FastAttackGamer144_Mode == "Fast Attack" then
+		_G.Fast_Delay = 0.1
+	elseif _G.FastAttackGamer144_Mode == "Normal Attack" then
 		_G.Fast_Delay = 0.08
-	elseif _G.FastAttackGamer144YTB_Mode == "Normal Attack" then
-		_G.Fast_Delay = 0.05
 	elseif _G.FastAttackGamer144YTB_Mode == "Super Fast Attack" then
-		_G.Fast_Delay = 0.03
+		_G.Fast_Delay = 0.04
 	end
 end)
 
