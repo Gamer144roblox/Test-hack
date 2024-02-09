@@ -7,7 +7,7 @@ local Window = Fluent:CreateWindow({
     TabWidth = 160,
     Size = UDim2.fromOffset(530, 350),
     Acrylic = true,
-    Theme = "darkred",
+    Theme = "aqua",
     MinimizeKey = Enum.KeyCode.End
 })
 local Tabs = {
@@ -2478,11 +2478,11 @@ local listfastattack = {'Normal Attack','Fast Attack','Super Fast Attack'}
     })
     DropdownDelayAttack:SetValue("Fast Attack")
     DropdownDelayAttack:OnChanged(function(Value)
-    _G.FastAttackZueszYTB_Mode = Value
-	if _G.FastAttackZueszYTB_Mode == "Fast Attack" then
+    _G.FastAttackGamer144_Mode = Value
+	if _G.FastAttackGamer144_Mode == "Fast Attack" then
 		_G.Fast_Delay = 0.12
-	elseif _G.FastAttackZueszYTB_Mode == "Normal Attack" then
-		_G.Fast_Delay = 0.2
+	elseif _G.FastAttackGamer144_Mode == "Normal Attack" then
+		_G.Fast_Delay = 0.1
 	elseif _G.FastAttackZueszYTB_Mode == "Super Fast Attack" then
 		_G.Fast_Delay = 0.05
 	end
