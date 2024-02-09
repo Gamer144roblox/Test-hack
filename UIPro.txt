@@ -6108,6 +6108,38 @@ spawn(function()
     end)
 end)
 
+local ToggleKillPlayerTrial = Tabs.Race:AddToggle("ToggleKillPlayerTrial", {Title = "Tự động giết người chơi ở trial",Description = "", Default = false })
+ToggleKillPlayerTrial:OnChanged(function(Value)
+    _G.KillAfterTrials = value
+end)
+Options.ToggleKillPlayerTrial:SetValue(false)
+spawn(function()
+    while wait() do 
+        pcall(function()
+            if _G.KillAfterTrials then
+                for i,v in pairs(game:GetService("Workspace").Characters:GetChildren()) do
+                    if v.Name ~= game.Players.LocalPlayer.Name and (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 100 then
+                        if v.Humanoid.Health > 0 then
+                            repeat wait()
+                                AutoHaki()
+                                EquipWeapon(_G.SelectWeapon)
+                                NameTarget = v.Name
+                                TP1(v.HumanoidRootPart.CFrame * CFrame.new(0,0,5))
+                                v.HumanoidRootPart.CanCollide = false
+                                v.Head.CanCollide = false
+                                v.HumanoidRootPart.Size = Vector3.new(60, 60, 60)
+                                Click()
+                            until not _G.KillAfterTrials or not v.Parent or v.Humanoid.Health <= 0 
+                        end
+                    end
+                end
+            end
+        end)
+    end
+end)
+
+
+
 
 local Mastery = Tabs.Race:AddSection("Tự Động Luyện TỘc")
 
