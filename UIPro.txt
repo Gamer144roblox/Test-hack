@@ -1,4 +1,4 @@
-local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
+local Fluent = loadstring(game:HttpGet(https://raw.githubusercontent.com/Gamer144roblox/Test-hack/main/ProHub.txt"))()
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
 local Window = Fluent:CreateWindow({
@@ -6,17 +6,17 @@ local Window = Fluent:CreateWindow({
     SubTitle = "By Huy",
     TabWidth = 130,
     Size = UDim2.fromOffset(530, 350),
-    Acrylic = false,
+    Acrylic = true,
     Theme = "Aqua",
     MinimizeKey = Enum.KeyCode.End
 })
 local Tabs = {
-    Main = Window:AddTab({ Title = "Main", Icon = "" }),
-    Stats = Window:AddTab({ Title = "Stats", Icon = "" }),
-    Player = Window:AddTab({ Title = "Player", Icon = "" }),
-    Teleport = Window:AddTab({ Title = "Island", Icon = "" }),
-    Fruit = Window:AddTab({ Title = "Fruit", Icon = "" }),
-    Raid = Window:AddTab({ Title = "Raid", Icon = "" }),
+    Main = Window:AddTab({ Title = "Main", Icon = "home" }),
+    Stats = Window:AddTab({ Title = "Stats", Icon = "plus-circle" }),
+    Player = Window:AddTab({ Title = "Player", Icon = "baby" }),
+    Teleport = Window:AddTab({ Title = "Island", Icon = "island" }),
+    Fruit = Window:AddTab({ Title = "Fruit", Icon = "cherry" }),
+    Raid = Window:AddTab({ Title = "Raid", Icon = "swords" }),
     Race = Window:AddTab({ Title = "Race V4", Icon = "" }),
     Shop = Window:AddTab({ Title = "Shop", Icon = "" }),
 	Misc = Window:AddTab({ Title = "Misc", Icon = "" }),
@@ -501,7 +501,7 @@ NameMon = "Fishman Raider"
 CFrameQ = CFrame.new(-10582.759765625, 331.78845214844, -8757.666015625)
 CFrameMon = CFrame.new(-10553.268554688, 521.38439941406, -8176.9458007813)
 elseif Lv == 1800 or Lv <= 1824 or SelectMonster == "Fishman Captain" or SelectArea == 'Deep Forest' then -- Fishman Captain
-Ms = "Fishman Captain" --Gamer144 Pro
+Ms = "Fishman Captain"
 NameQuest = "DeepForestIsland3"
 QuestLv = 2
 NameMon = "Fishman Captain"
@@ -2471,20 +2471,20 @@ local listfastattack = {'Normal Attack','Fast Attack','Super Fast Attack'}
 
     local DropdownDelayAttack = Tabs.Main:AddDropdown("DropdownDelayAttack", {
         Title = "Chọn Tốc Độ Đánh",
-        Description = "nên chọn normal attack hoặc nhanh hơn thì super fast attack",
+        Description = "",
         Values = listfastattack,
         Multi = false,
         Default = 1,
     })
     DropdownDelayAttack:SetValue("Fast Attack")
     DropdownDelayAttack:OnChanged(function(Value)
-    _G.FastAttackGamer144_Mode = Value
-	if _G.FastAttackGamer144_Mode == "Fast Attack" then
-		_G.Fast_Delay = 0.0.9
-	elseif _G.FastAttackGamer144_Mode == "Normal Attack" then
+    _G.FastAttackGamer144YTB_Mode = Value
+	if _G.FastAttackGamer144YTB_Mode == "Fast Attack" then
 		_G.Fast_Delay = 0.08
-	elseif _G.FastAttackGamer144_Mode == "Super Fast Attack" then
-		_G.Fast_Delay = 0.04
+	elseif _G.FastAttackGamer144YTB_Mode == "Normal Attack" then
+		_G.Fast_Delay = 0.05
+	elseif _G.FastAttackGamer144YTB_Mode == "Super Fast Attack" then
+		_G.Fast_Delay = 0.03
 	end
 end)
 
@@ -2698,7 +2698,7 @@ end)
 
     local ToggleCastleRaid = Tabs.Main:AddToggle("ToggleCastleRaid", {
         Title = "Đánh Hải Tặc ở Pháo Đài",
-        Description = "Lưu ý trên sea 3", 
+        Description = "", 
         Default = false })
     ToggleCastleRaid:OnChanged(function(Value)
         _G.CastleRaid = Value
@@ -2802,7 +2802,7 @@ end
 function TPchest(P1)          
             local Distance = (P1.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
               if Distance >= 0 then
-                Speed = 1100000
+                Speed = 1200000
                 end
                 local tween =  game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(Distance/Speed), {CFrame = P1  }) tween:Play()                                    
              end
@@ -2953,9 +2953,9 @@ local Mastery = Tabs.Main:AddSection("Mastery Farm")
     local SliderHealt = Tabs.Main:AddSlider("SliderHealt", {
         Title = "Phần Trăm Máu Quái",
         Description = "",
-        Default = 15,
+        Default = 25,
         Min = 0,
-        Max = 110,
+        Max = 100,
         Rounding = 1,
         Callback = function(Value)
             KillPercent = Value
@@ -4800,7 +4800,7 @@ Options.ToggleQuanSat:SetValue(false)
 local ToggleFastAttack = Tabs.Player:AddToggle("ToggleFastAttack", {Title = "Đánh Người Chơi",Description = "", Default = false })
 
 ToggleFastAttack:OnChanged(function(Value)
- _G.FastAttackGamer144 = Value
+ _G.FastAttackGamer144YTB = Value
 end)
 Options.ToggleFastAttack:SetValue(false)
 
@@ -4827,10 +4827,10 @@ SliderDelayAttackPlayer:SetValue(0.1)
 spawn(function()
 while wait() do
     pcall(function()
-        if _G.FastAttackGamer144 then
+        if _G.FastAttackGamer144YTB then
             repeat wait(_G.DelayAttackPlayer)
                AttackNoCoolDown()
-            until not _G.FastAttackGamer144
+            until not _G.FastAttackGamer144YTB
         end
     end)
 end
@@ -5097,7 +5097,7 @@ Tabs.Teleport:AddButton({
 
 
 Tabs.Teleport:AddButton({
-    Title = "Sea 3",
+    Title = "Sea 3a",
     Description = "",
     Callback = function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("TravelZou")
@@ -6144,7 +6144,7 @@ spawn(function()
                                     AutoHaki()
                                     EquipTool(SelectWeapon)
                                     v.HumanoidRootPart.CanCollide = false
-                                    v.Humanoid.WalkSpeed = 1
+                                    v.Humanoid.WalkSpeed = 0
                                     v.Head.CanCollide = false 
                                     FarmPos = v.HumanoidRootPart.CFrame
                                     MonFarm = v.Name
@@ -6184,7 +6184,7 @@ while wait() do
 end
 end)
 
-local ToggleRandomBone = Tabs.Shop:AddToggle("ToggleRandomBone", {Title = "random xương",Description = "", Default = false })
+local ToggleRandomBone = Tabs.Shop:AddToggle("ToggleRandomBone", {Title = "Đổi xương",Description = "", Default = false })
 ToggleRandomBone:OnChanged(function(Value)  
 		_G.AutoRandomBone = Value
 end)
@@ -6785,7 +6785,7 @@ spawn(function()
         elseif game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=16223659141" then
             Hop()
             Fluent:Notify({
-                Title = "Gamer144 Hub",
+                Title = "YTB: Gamer144 Hub",
                 Content = "Turn Off Find Full Moon...",
                 SubContent = "", -- Optional
                 Duration = 5 -- Set to nil to make the notification not disappear
@@ -6793,7 +6793,7 @@ spawn(function()
         elseif game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=16223659141" then
             Hop()
             Fluent:Notify({
-                Title = "Gamer144 Hub",
+                Title = "YTB: Gamer144 Hub",
                 Content = "Hop...",
                 SubContent = "", -- Optional
                 Duration = 5 -- Set to nil to make the notification not disappear
@@ -6801,7 +6801,7 @@ spawn(function()
         elseif game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=16223659141" then
             Hop()
             Fluent:Notify({
-                Title = "Gamer144",
+                Title = "YTB: Gamer144 Hub",
                 Content = "Hop...",
                 SubContent = "", -- Optional
                 Duration = 5 -- Set to nil to make the notification not disappear
