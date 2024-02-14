@@ -1,6 +1,6 @@
 if game.PlaceId == 2753915549 or game.PlaceId == 4442272183 or game.PlaceId == 7449423635 then 
 	setfpscap(999)
-	_G.Color = Color3.fromRGB(0, 86, 255)
+	_G.Color = Color3.fromRGB(255, 0, 0)
 	_G.Settings = {
 		Auto_Farm_Level = false,
 		Auto_Farm_Fast = true,
@@ -295,7 +295,7 @@ if game.PlaceId == 2753915549 or game.PlaceId == 4442272183 or game.PlaceId == 7
 		end
 	end
 
-	_G.Color = Color3.fromRGB(0, 86, 255)
+	_G.Color = Color3.fromRGB(255, 0, 0)
 	local UserInputService = game:GetService("UserInputService")
 	local VirtualInputManager = game:GetService("VirtualInputManager")
 	local TweenService = game:GetService("TweenService")
@@ -348,21 +348,21 @@ end
 	local Properties = {
 		RoundFrame = {
 			BackgroundTransparency = 1,
-			Image = "http://www.roblox.com/asset/?id=5554237731",
+			Image = "http://www.roblox.com/asset/?id=16223659141",
 			ScaleType = Enum.ScaleType.Slice,
 			SliceCenter = Rect.new(3,3,297,297)
 		},
 		SmoothButton = {
 			AutoButtonColor = false,
 			BackgroundTransparency = 1,
-			Image = "http://www.roblox.com/asset/?id=5554237731",
+			Image = "http://www.roblox.com/asset/?id=16223659141",
 			ScaleType = Enum.ScaleType.Slice,
 			SliceCenter = Rect.new(3,3,297,297)
 		},
 		Shadow = {
 			Name = "Shadow",
 			BackgroundTransparency = 1,
-			Image = "http://www.roblox.com/asset/?id=5554236805",
+			Image = "http://www.roblox.com/asset/?id=16223659141",
 			ScaleType = Enum.ScaleType.Slice,
 			SliceCenter = Rect.new(23,23,277,277),
 			Size = UDim2.fromScale(1,1) + UDim2.fromOffset(30,30),
@@ -370,12 +370,12 @@ end
 		},
 		Circle = {
 			BackgroundTransparency = 1,
-			Image = "http://www.roblox.com/asset/?id=5554831670"
+			Image = "http://www.roblox.com/asset/?id=16223659141"
 		},
 		CircleButton = {
 			BackgroundTransparency = 1,
 			AutoButtonColor = false,
-			Image = "http://www.roblox.com/asset/?id=5554831670"
+			Image = "http://www.roblox.com/asset/?id=16223659141"
 		},
 		Frame = {
 			BackgroundTransparency = 1,
@@ -413,13 +413,13 @@ end
 			Name = "More",
 			AutoButtonColor = false,
 			BackgroundTransparency = 1,
-			Image = "http://www.roblox.com/asset/?id=5555108481",
+			Image = "http://www.roblox.com/asset/?id=16223659141",
 			Size = UDim2.fromOffset(20,20),
 			Position = UDim2.fromScale(1,0.5) - UDim2.fromOffset(25,10)
 		},
 		NavBar = {
 			Name = "SheetToggle",
-			Image = "http://www.roblox.com/asset/?id=5576439039",
+			Image = "http://www.roblox.com/asset/?id=16223659141",
 			BackgroundTransparency = 1,
 			Size = UDim2.fromOffset(20,20),
 			Position = UDim2.fromOffset(5,5),
@@ -734,7 +734,7 @@ end
 		Logo_Background.Position = UDim2.new(0, 135, 0, 75)
 		Logo_Background.Size = UDim2.new(0, 305, 0, 305)
 		Logo_Background.ImageTransparency = 0.7
-		Logo_Background.Image = "rbxassetid://14645512457"
+		Logo_Background.Image = "rbxassetid://16223659141"
 		RunService.RenderStepped:Connect(function()
 			Logo_Background.Rotation = Logo_Background.Rotation + 1
 			if Logo_Background.Rotation >= 360 then
@@ -748,7 +748,7 @@ end
 		Title.Position = UDim2.new(0, 45, 0, 10)
 		Title.Size = UDim2.new(0, 483, 0, 31)
 		Title.Font = Enum.Font.FredokaOne
-		Title.Text = "TienTiny"
+		Title.Text = "Gamer144"
 		Title.TextColor3 = Color3.fromRGB(255, 255, 255)
 		Title.TextSize = 17.000
 		Title.TextWrapped = true
@@ -762,7 +762,7 @@ end
 		Title2.Position = UDim2.new(0, 95, 0, 10)
 		Title2.Size = UDim2.new(0, 483, 0, 31)
 		Title2.Font = Enum.Font.FredokaOne
-		Title2.Text = ".Space | Website Share Source."
+		Title2.Text = "Hub V2 Pro"
 		Title2.TextColor3 = _G.Color
 		Title2.TextSize = 17.000
 		Title2.TextWrapped = true
@@ -771,7 +771,7 @@ end
 	
 		local UiToggle_UiStroke1 = Instance.new("UIStroke")
 	
-		UiToggle_UiStroke1.Color = Color3.fromRGB(0, 86, 255)
+		UiToggle_UiStroke1.Color = Color3.fromRGB(255, 0, 0)
 		UiToggle_UiStroke1.Thickness = 1
 		UiToggle_UiStroke1.Name = "UiToggle_UiStroke1"
 		UiToggle_UiStroke1.Parent = Main
@@ -4019,38 +4019,13 @@ function GetMaterial(matname)
 		Side = "Left"
 	})
 	CredtSection:AddLabel({
-		Name = "Script Made By Ryuenz#6264\nUi library Made By Ares\nCrack By TienTiny.Space"
+		Name = "Gamer144 Hub Ac Quy;)"
 	})
 	local Discord =	CredtSection:AddLabel({
 		Name = "...."
 	})
 	local English = {
-		Name = "Copy Discord Link Cick Copy Link\nI recommend going to Discord \nso you don't miss any updates."
-	}
-	
-	local Thai = {
-		Name = "ก็อปลิ้งดิสคอร์ดกดCopy Link\nแนะนำให้เข้าดิสคอร์ดนะครับเพื่อไม่พลาดการอัพเดต"
-	}
-	
-	local function Loop()
-		while true do
-			Discord:Set(English.Name)
-			Discord:Set(English.Name)
-			wait(1)
-	
-			English, Thai = Thai, English
-		end
-	end
-	coroutine.wrap(Loop)()
-	CredtSection:AddButton({
-		Name = "Copy Link",
-		Callback = function()
-			setclipboard("https://discord.gg/977JQXX82w")
-			game:GetService("StarterGui"):SetCore("SendNotification", {
-				Title = "VectorHub",
-				Text = "Successfully copied",
-				Icon = "rbxassetid://14645512457",
-				Duration = 3,
+		Name = "HuyAcQuy."
 			})
 		end,
 	
