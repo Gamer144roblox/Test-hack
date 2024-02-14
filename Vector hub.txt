@@ -4026,6 +4026,24 @@ function GetMaterial(matname)
 	})
 	local English = {
 		Name = "HuyAcQuy."
+	}
+	
+	local function Loop()
+		while true do
+			HuyAcQuy:Set(English.Name)
+			HuyAcQuy:Set(English.Name)
+			wait(1)
+
+	coroutine.wrap(Loop)()
+	CredtSection:AddButton({
+		Name = "Copy Link",
+		Callback = function()
+			setclipboard("https://discord.com/invite/F7FUYgS2")
+			game:GetService("StarterGui"):SetCore("SendNotification", {
+				Title = "Gamer144Hub",
+				Text = "Successfully copied",
+				Icon = "rbxassetid://16223659141",
+				Duration = 3,
 			})
 		end,
 	
