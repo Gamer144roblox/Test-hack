@@ -3738,17 +3738,18 @@ M:AddParagraph("Auto Farm Boss :","Chờ Update thôi ae!!!")
             _G.Auto_God_Human = Value
         end    
     })
-    KI:AddToggle({
-        Name = "Check Kitsune Island",
-        Default = true,
-        
+local Section = KI:AddSection({
+            Name = "Kitsune Island Check"
+        })
+
+      if World3 then         
         spawn(function()
 			pcall(function()
 				while task.wait() do
 					if game.Workspace._WorldOrigin.Locations:FindFirstChild('Kitsune Island') then
-						Kitsunecheck:Set('Status Mirage Island : 🟢 🦊') 
+						Kitsunecheck:Set('Status Kitsune Island : ✅ 🦊') 
 					else
-						Kitsunecheck:Set('Status Mirage Island : 🔴 🦊')
+						Kitsunecheck:Set('Status Kitsune Island : ❎ 🦊')
 					end
 				end
 			end)
