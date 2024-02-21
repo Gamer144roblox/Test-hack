@@ -1,33 +1,20 @@
 repeat wait()
 until getgenv().LoadUi and getgenv().IslandCaller and getgenv().SettingManager 
-local Title = "Gamer144 Hub Test")
-local SubTitle = "Fix"
+local Title = "W-azure" .. (getgenv().Premium and " [Premium]" or "")
+local SubTitle = "True V2 discord.gg/w-azure"
 local Fluent = loadstring(game:HttpGet("https://raw.githubusercontent.com/vinhuchi/rblx/main/FixedFluent.lua"))()
 local UiSetting = Fluent.Options
 local IslandCaller = IslandCaller or getgenv().IslandCaller
 local SettingManager = getgenv().SettingManager 
 local Window = getgenv().Window or Fluent:CreateWindow({
-    Title = Title,
+    Title = Gamer144 Hub V1 pro,
     SubTitle = SubTitle,
     TabWidth = 160,
     Size = UDim2.fromOffset(480, 360),
     Acrylic = false, -- The blur may be detectable, setting this to false disables blur entirely
-    Theme = "Aque",
+    Theme = "Dark",
     MinimizeKey = Enum.KeyCode.LeftControl -- Used when theres no MinimizeKeybind
 })
-local Tabs = {
-    Main = Window:AddTab({ Title = "Main", Icon = "" }),
-    Stats = Window:AddTab({ Title = "Stats", Icon = "" }),
-    Player = Window:AddTab({ Title = "Player", Icon = "" }),
-    Teleport = Window:AddTab({ Title = "Island", Icon = "" }),
-    Fruit = Window:AddTab({ Title = "Fruit", Icon = "" }),
-    Raid = Window:AddTab({ Title = "Raid", Icon = "" }),
-    Race = Window:AddTab({ Title = "Race V4", Icon = "" }),
-    Shop = Window:AddTab({ Title = "Shop", Icon = "" }),
-	Misc = Window:AddTab({ Title = "Misc", Icon = "" }),
-    Hop = Window:AddTab({ Title = "Hop", Icon = "" }),
-    Setting = Window:AddTab({ Title = "Setting", Icon = "" }),
-}
 local Options = Fluent.Options
 do
     
